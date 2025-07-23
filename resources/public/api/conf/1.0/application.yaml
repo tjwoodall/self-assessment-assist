@@ -40,7 +40,7 @@ servers:
 
 components:
   securitySchemes:
-    userRestricted:
+    User-Restricted:
       type: oauth2
       description: |
         HMRC supports OAuth 2.0 for authenticating user-restricted API requests using an OAuth 2.0 Bearer Token in the
@@ -258,7 +258,7 @@ paths:
         - $ref: '#/components/parameters/authorizationReadScopeHeader'
 
       security:
-        - userRestricted:
+        - User-Restricted:
             - read:self-assessment-assist
 
       responses:
@@ -459,7 +459,7 @@ paths:
         - $ref: '#/components/parameters/authorizationWriteScopeHeader'
 
       security:
-        - userRestricted:
+        - User-Restricted:
             - write:self-assessment-assist
       responses:
         "204":
