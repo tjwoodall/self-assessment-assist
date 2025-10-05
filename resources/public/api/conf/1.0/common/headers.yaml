@@ -1,8 +1,6 @@
 components:
   parameters:
     correlationId:
-      in: header
-      type: string
       description: |
         Unique ID for operation tracking
         String, 36 characters.
