@@ -446,7 +446,7 @@ paths:
       - Acknowledge Report
       summary: Acknowledge a HMRC Self Assessment Assist Report
       description: |
-        This endpoint allows a developer to acknowledge that the given report has been read by the customer or agent.
+        This endpoint allows a developer to acknowledge that the given report has been displayed in full to the customer or agent.
       parameters:
       - name: nino
         in: path
