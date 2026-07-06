@@ -1,4 +1,4 @@
-self-assessment-assist-api
+Self Assessment Assist API
 ========================
 
 [![Apache-2.0 license](http://img.shields.io/badge/license-Apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -10,43 +10,56 @@ The Self-Assessment-Assist API allows a developer to:
 - allow the client to acknowledge the report
 
 ## Requirements
-- Scala 2.13.8
-- Java 11 
-- sbt 1.7.2
-- [Service Manager](https://github.com/hmrc/service-manager)
+- Scala 3.5.x
+- Java 21
+- sbt 1.10.x
+- [Service Manager V2](https://github.com/hmrc/sm2)
 
 ## Development Setup
-Run the microservice from the console using: `sbt run` (starts on port 8342)
 
-Start the service manager profile: `sm2 --start SELF_ASSESSMENT_ASSIST_ALL`
+Run the microservice from the console using: `sbt run` (starts on port 8342 by default)
 
+Start the service manager profile:
+
+```bash
+sm2 -start SELF_ASSESSMENT_ASSIST_ALL
+```
 ## Run Tests
 Run unit tests: `sbt test`
 
 Run integration tests: `sbt it/test`
 
-## Local Dev and QA Test Instructions
-The QA test instruction documentation for local, QA and dev journeys (individual and agent) can be seen [here](https://confluence.tools.tax.service.gov.uk/pages/viewpage.action?spaceKey=TR&title=QA).
+## View OpenAPI Specification (OAS) documentation
 
+To view the OpenAPI documentation locally, ensure the API is running.
 
-## To view the OAS documentation
-To view documentation locally, ensure the Self Assessment Assist API is running.
+Start the `api-documentation-frontend` and `api-definition` services using the Service Manager profile:
 
-Then go to http://localhost:9680/api-documentation/docs/openapi/preview and enter the full URL path to the YAML file with the appropriate port and version:
-
+```bash
+sm2 -start DEVHUB_PREVIEW_OPENAPI
 ```
+
+Then navigate to the preview page:
+
+```text
+http://localhost:9680/api-documentation/docs/openapi/preview
+```
+
+Enter the specification URL using the appropriate port and API version:
+
+```text
 http://localhost:8342/api/conf/1.0/application.yaml
 ```
-## Runbook
 
-You can access the ITSA/HMRC Assist Runbook [here](https://confluence.tools.tax.service.gov.uk/display/TR/HMRC+Assist+Runbook).
+## Changelog
+You can see our changelog [here](https://github.com/hmrc/income-tax-mtd-changelog)
 
 ## Support and Reporting Issues
 
-- You can raise non-technical or platform-related issues with the [Software Development Support Team](https://developer.service.hmrc.gov.uk/developer/support)
+You can create a GitHub issue [here](https://github.com/hmrc/income-tax-mtd-changelog/issues)
 
 ## API Reference / Documentation
-Available on the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/self-assessment-assist/1.0)
+Available on the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/self-assessment-assist)
 
 ## License
-This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html")
+This code is open source software licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
